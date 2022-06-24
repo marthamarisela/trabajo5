@@ -306,13 +306,14 @@ public class FacturaVentana extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
     private void actualizarTablaFactura(){
         
-        String[] encabezado = new String [6];
+        String[] encabezado = new String [7];
         encabezado[0]="CODIGO";
         encabezado[1]="DIRECCION";
         encabezado[2]="FECHA";
         encabezado[3]="TOTAL";
-        encabezado[4]="CLIENTE";
-        encabezado[5]="PRODUCTO";
+        encabezado[4]="CANTIDAD";
+        encabezado[5]="CLIENTE";
+        encabezado[6]="PRODUCTO";
         
         var datos = new Object[this.facturaControl.listar().size()][7];
         var i = 0;
@@ -322,7 +323,7 @@ public class FacturaVentana extends javax.swing.JInternalFrame {
             datos[i][2]=factura.getFecha();
             datos[i][3]=factura.getTotal();
             datos[i][4]=factura.getCantidad();
-            datos[i][5]=factura.getCliente().getDireccion();
+            datos[i][5]=factura.getCliente().getNumCedula();
             datos[i][6]=factura.getProducto().getNombre();
             i++;
         }
